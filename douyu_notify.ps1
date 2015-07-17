@@ -1,5 +1,5 @@
-﻿$room="chenyifaer"
-#$room="71771"
+﻿#$room="chenyifaer"
+$room="71771"
 $request_interval=100
 
 function is_stream() {
@@ -14,8 +14,20 @@ Try {
     Write-Output("start monitoring streaming status of " + $room)
     if (is_stream) {
         Write-Output($room + ' started live streaming at '+ (Get-Date -format MMdd_HHmm))
-        [System.Windows.Forms.MessageBox]::Show($room , $room)
-        while (is_stream) {Start-Sleep -Seconds 3600}
+        $oReturn=[System.Windows.Forms.MessageBox]::Show("press OK to launch "+$room,$room,[System.Windows.Forms.MessageBoxButtons]::OKCancel)	
+        switch ($oReturn){
+	        "OK" {
+		        write-host "pressed OK"
+                $url="http://www.douyutv.com/"+$room
+		        start $url
+	        } 
+	        "Cancel" {
+		        write-host "pressed Cancel"
+		        # Enter some code
+	        } 
+        }
+
+        while (is_stream) {Start-Sleep -Seconds 1800}
         }
     Start-Sleep -Seconds $request_interval
  }
