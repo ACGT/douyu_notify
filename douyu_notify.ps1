@@ -1,5 +1,5 @@
-﻿#$room="chenyifaer"
-$room="71771"
+$room="chenyifaer"
+#$room="71771"
 $request_interval=100
 
 function is_stream() {
