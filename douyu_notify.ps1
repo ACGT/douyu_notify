@@ -2,7 +2,7 @@ $room="chenyifaer"
 #$room="71771"
 $request_interval=100
 
-Add-Type –AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Windows.Forms
 
 function is_stream() {
     $url="http://www.douyutv.com/"+$room
