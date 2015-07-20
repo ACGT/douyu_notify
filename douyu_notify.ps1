@@ -11,9 +11,9 @@ function is_stream() {
     return $status
 }
 
+Write-Output("start monitoring streaming status of " + $room)
 while($true){
 Try {
-    Write-Output("start monitoring streaming status of " + $room)
     if (is_stream) {
         Write-Output($room + ' started live streaming at '+ (Get-Date -format MMdd_HHmm))
         $oReturn=[System.Windows.Forms.MessageBox]::Show("press OK to launch "+$room,$room,[System.Windows.Forms.MessageBoxButtons]::OKCancel)	
@@ -28,7 +28,6 @@ Try {
 		        # Enter some code
 	        } 
         }
-
         while (is_stream) {Start-Sleep -Seconds 1800}
         }
     Start-Sleep -Seconds $request_interval
