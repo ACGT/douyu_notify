@@ -17,9 +17,9 @@ def is_stream(room):
         return 1
 
 def monitor(room):
+    print "start monitoring streaming status of " + room
     while 1:
         try:
-                print "start monitoring streaming status of " + room
                 if is_stream(room):
                     current_time = datetime.datetime.now().time()
                     print room + ' started live streaming at ' + str(current_time)
