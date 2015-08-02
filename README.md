@@ -1,6 +1,6 @@
 # douyu_notify
 
-*python版：*
+#python版：
 
 因为不想用第三方库，所以只有丑陋的弹窗提醒，弹窗只支持win，不支持*nix。
 
@@ -8,7 +8,7 @@
 
 Usage: python douyu.py chenyifaer erke 71771
 
-*powershell版：*
+#powershell版：
 
 有人反映安装python太麻烦，所以写了个powershell版，懒得写多线程和邮件提醒功能了，只支持单个直播间弹窗提醒。
 
