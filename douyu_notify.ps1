@@ -1,4 +1,4 @@
-$room="chenyifaer"
+$room="kyu999"
 #$room="71771"
 $request_interval=100
 
