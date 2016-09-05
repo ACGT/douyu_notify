@@ -16,7 +16,7 @@ def is_stream(room):
     if "feedback-report-button" in r.text:
         return 1
 
-def monitor(room):
+def monitor(room): 
     print "start monitoring streaming status of " + room
     while 1:
         try:
@@ -26,9 +26,9 @@ def monitor(room):
                     ctypes.windll.user32.MessageBoxA(0,  room, str(current_time), 1)
                     if mail_notify:
                         send_email(room)
-                    sleep(3600)
+                    sleep(3600) 
                     while (is_stream(room)):
-                        sleep(3600)
+                        sleep(3600) # check streaming status every 3600s after streaming starts in order to reduce resource usage
                 sleep(request_interval)
         except Exception, e:
             print str(e)
@@ -59,9 +59,7 @@ def send_email(SUBJECT):
 
 if __name__ == "__main__":
     threads = []
-#   usage: python douyu.py chenyifaer erke 71771
-    for room in sys.argv[1:]: # uncomment this line to read room ids from command line arguments
-#    for room in ["chenyifaer","erke"]:
+    for room in sys.argv[1:]:
         t = threading.Thread(target=monitor, args=(room,))
         threads.append(t)
         t.daemon = True
