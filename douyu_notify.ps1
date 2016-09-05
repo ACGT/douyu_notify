@@ -1,5 +1,5 @@
-$room="kyu999"
-#$room="71771"
+
+$room="71771"
 $request_interval=100
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -7,7 +7,7 @@ Add-Type -AssemblyName System.Windows.Forms
 function is_stream() {
     $url="http://www.douyutv.com/"+$room
     $reply=(New-Object System.Net.WebClient).DownloadString($url)
-    $status = $reply.Contains("feedback_report_button")
+    $status = $reply.Contains("feedback-report-button")
     return $status
 }
 
