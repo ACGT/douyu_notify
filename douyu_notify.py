@@ -13,7 +13,7 @@ mail_notify = 0
 def is_stream(room):
     url = "http://www.douyutv.com/"+room
     r = requests.get(url,timeout=20,verify=False)
-    if "feedback_report_button" in r.text:
+    if "feedback-report-button" in r.text:
         return 1
 
 def monitor(room):
