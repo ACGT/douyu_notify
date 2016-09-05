@@ -6,6 +6,7 @@
 如果需要邮件提醒，请自行修改邮箱、密码。可以发送到139或 wo 邮箱，间接实现短信提醒。
 
 Usage: python douyu.py [room IDs or room names in the URL, use comma, space or tab to seperate several rooms].
+
 Example: python douyu.py 71771 chamiao
 
 
